@@ -1,16 +1,14 @@
+import { css } from './utils'
+
 const indicatorItem = (_, i) =>
   `<div class="slider__indicator" data-indicator="${i}"></div>`
-
-function css(el, styles) {
-  Object.assign(el.style, styles)
-}
 
 export class Slider {
   static defaultOptions = () => ({
     active: 0,
     arrows: true,
     indicators: true,
-    duration: 1000,
+    duration: 500,
   })
 
   static init(root, options) {
