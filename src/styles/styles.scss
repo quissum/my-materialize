@@ -56,7 +56,7 @@ body {
     background: rgba(255, 255, 255, 0.02);
     cursor: pointer;
     transition: all ease-in-out 0.15s;
-    z-index: 100;
+    z-index: 9;
 
     &:hover {
       background: rgba(255, 255, 255, 0.05);
@@ -103,7 +103,7 @@ body {
     transform: translateX(-50%);
     display: flex;
     justify-content: center;
-    z-index: 100;
+    z-index: 9;
     overflow-y: hidden;
   }
 
@@ -239,7 +239,7 @@ body {
     justify-content: center;
     align-items: center;
     color: #eeeeee;
-    z-index: 1000;
+    z-index: 9;
     transition: all ease 0.22s;
   }
 
@@ -254,7 +254,7 @@ body {
     overflow: hidden;
     width: 500px;
     padding: 50px 100px 70px 50px;
-    z-index: 10;
+    z-index: 8;
     transform-origin: right bottom;
     transform: scale(0);
     transition: all ease 0.22s;
@@ -281,17 +281,40 @@ body {
 @keyframes pulse {
   0% {
     box-shadow: 0 0 0 15px rgba(238, 238, 238, 0.9),
-      0 0 0 15px rgba(238, 238, 238, 0.5);
+      0 0 0 15px rgba(238, 238, 238, 0.9);
   }
   50% {
     box-shadow: 0 0 0 15px rgba(238, 238, 238, 0.9),
-      0 0 0 15px rgba(238, 238, 238, 0.5);
+      0 0 0 15px rgba(238, 238, 238, 0.9);
   }
-  90% {
-    box-shadow: 0 0 0 20px rgba(238, 238, 238, 0.9),
+
+  100% {
+    box-shadow: 0 0 0 15px rgba(238, 238, 238, 0.9),
       0 0 0 40px rgba(238, 238, 238, 0);
   }
-  100% {
-    box-shadow: 0 0 0 15px rgba(238, 238, 238, 0.9);
+}
+
+.content-img {
+  margin: 50px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.boxed {
+  display: block;
+  width: max-content;
+  height: 70vh;
+  object-fit: contain;
+  background: rgba(0, 0, 0, 0);
+  cursor: zoom-in;
+  transition: all ease 0.22s;
+
+  &.active {
+    position: sticky;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.8);
+    cursor: zoom-out;
+    z-index: 10;
   }
 }
