@@ -1,9 +1,22 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap');
 
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+button {
+  border: none;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+li {
+  list-style: none;
 }
 
 body {
@@ -130,10 +143,6 @@ body {
   box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.2);
   width: 500px;
 
-  li {
-    list-style: none;
-  }
-
   &__header {
     border-bottom: 1px solid #bdbdbd;
     padding: 15px;
@@ -171,12 +180,9 @@ body {
   width: max-content;
 
   &__btn {
-    border: none;
     background: #455a64;
-    font: inherit;
     color: #f5f5f5;
     padding: 15px 20px;
-    cursor: pointer;
     transition: all ease 0.22s;
 
     &:hover {
@@ -195,7 +201,6 @@ body {
   }
 
   li {
-    list-style: none;
     padding: 10px 20px;
     cursor: pointer;
     background: #f5f5f5;
@@ -211,5 +216,82 @@ body {
     li {
       transform: translateY(0);
     }
+  }
+}
+
+.tap {
+  margin: 50px auto;
+  width: max-content;
+
+  &__btn {
+    @extend .dropdown__btn;
+  }
+
+  &__target {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #455a64;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #eeeeee;
+    z-index: 1000;
+    transition: all ease 0.22s;
+  }
+
+  &__content {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    background: rgba(69, 90, 100, 0.9);
+    color: #eeeeee;
+    font-weight: 300;
+    border-radius: 37% 63% 0% 100% / 64% 52% 48% 36%;
+    overflow: hidden;
+    width: 500px;
+    padding: 50px 100px 70px 50px;
+    z-index: 10;
+    transform-origin: right bottom;
+    transform: scale(0);
+    transition: all ease 0.22s;
+
+    h1 {
+      font-size: 25px;
+      margin: 0 0 20px 20px;
+    }
+  }
+
+  &.active {
+    .tap__content {
+      transform: scale(1);
+    }
+    .tap__target {
+      bottom: 40px;
+      right: 40px;
+      box-shadow: 0 0 0 20px rgba(238, 238, 238, 0.9);
+      animation: pulse 1s ease infinite;
+    }
+  }
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 15px rgba(238, 238, 238, 0.9),
+      0 0 0 15px rgba(238, 238, 238, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 0 15px rgba(238, 238, 238, 0.9),
+      0 0 0 15px rgba(238, 238, 238, 0.5);
+  }
+  90% {
+    box-shadow: 0 0 0 20px rgba(238, 238, 238, 0.9),
+      0 0 0 40px rgba(238, 238, 238, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 15px rgba(238, 238, 238, 0.9);
   }
 }
