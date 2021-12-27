@@ -21,7 +21,6 @@ export class ScrollSpy {
   }
 
   static scroll() {
-    console.log('scroll')
     const scrollTop = document.documentElement.scrollTop
     let num
 
