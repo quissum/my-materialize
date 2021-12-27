@@ -15,6 +15,12 @@ button {
   cursor: pointer;
 }
 
+a {
+  color: inherit;
+  font-size: inherit;
+  text-decoration: none;
+}
+
 li {
   list-style: none;
 }
@@ -303,6 +309,7 @@ body {
 .boxed {
   display: block;
   width: max-content;
+  max-width: 100%;
   height: 70vh;
   object-fit: contain;
   background: rgba(0, 0, 0, 0);
@@ -316,5 +323,153 @@ body {
     background: rgba(0, 0, 0, 0.8);
     cursor: zoom-out;
     z-index: 10;
+  }
+}
+
+.modal {
+  position: fixed;
+  left: 0;
+  top: -100%;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  z-index: 11;
+  background: rgba(0, 0, 0, 0);
+  transition: background 0.22s ease;
+
+  &__container {
+    width: 40vw;
+    height: auto;
+    z-index: 2;
+    background: #f5f5f5;
+    padding: 20px;
+    color: #212121;
+    transform: translateY(-20vh) scale(0.5);
+    opacity: 0;
+    transition: all 0.22s ease;
+  }
+
+  &__btn {
+    @extend .dropdown__btn;
+    display: block;
+    margin: 50px auto;
+  }
+
+  &__content {
+    h1 {
+      margin-bottom: 15px;
+      font-size: 22px;
+    }
+  }
+
+  &__footer {
+    margin-top: 20px;
+    padding-right: 20px;
+    display: flex;
+    justify-content: end;
+
+    a {
+      margin-left: 20px;
+      transition: all 0.22s ease;
+      cursor: pointer;
+
+      &:hover {
+        color: #616161;
+      }
+    }
+  }
+
+  &.active {
+    background: rgba(0, 0, 0, 0.8);
+
+    .modal__container {
+      transform: translateY(0px) scale(1);
+      opacity: 1;
+    }
+  }
+}
+
+.pushpin {
+  &__container {
+    position: relative;
+    color: #f5f5f5;
+
+    &--pink {
+      .pushpin__navbar {
+        background: #f06292;
+      }
+      .pushpin__content {
+        background: #ec407a;
+      }
+    }
+    &--blue {
+      .pushpin__navbar {
+        background: #4fc3f7;
+      }
+      .pushpin__content {
+        background: #29b6f6;
+      }
+    }
+    &--teal {
+      .pushpin__navbar {
+        background: #4db6ac;
+      }
+      .pushpin__content {
+        background: #26a69a;
+      }
+    }
+  }
+
+  &__navbar {
+    position: sticky;
+    left: 0;
+    top: 0;
+    padding: 0 10%;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
+
+    p {
+      padding: 15px;
+    }
+  }
+
+  &__content {
+    height: 400px;
+  }
+}
+
+.content-table {
+  position: fixed;
+  right: 5%;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  background: rgba(33, 33, 33, 0.4);
+  padding: 10px 0;
+  border-radius: 10px;
+
+  a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 5px 10px;
+    color: #9e9e9e;
+    font-weight: 300;
+    cursor: pointer;
+    transition: all 0.22s ease;
+    border-left: 1px solid transparent;
+
+    &:hover {
+      color: #e0e0e0;
+      border-left: 1px solid #455a64;
+    }
+
+    &.active {
+      color: #e0e0e0;
+      font-weight: 400;
+      border-left: 2px solid #455a64;
+    }
   }
 }

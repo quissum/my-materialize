@@ -8,6 +8,37 @@
   </head>
   <body>
     <div class="wrapper">
+      <ul id="scrollSpy" class="content-table">
+        <li><a href="#modalBtn">Modal</a></li>
+        <li><a href="#boxed">Image</a></li>
+        <li><a href="#tap">Tap</a></li>
+        <li><a href="#dropdown">Dropdown</a></li>
+        <li><a href="#collapsible">Collapsible</a></li>
+        <li><a href="#slider">Slider</a></li>
+        <li><a href="#pushpin">Pushpin</a></li>
+      </ul>
+
+      <button id="modalBtn" class="modal__btn" data-target="modal">
+        Modal
+      </button>
+
+      <div id="modal" class="modal">
+        <div class="modal__container">
+          <div class="modal__content">
+            <h1>Title Modal</h1>
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa
+              qui omnis vitae unde provident vel, recusandae tempora saepe
+              beatae eligendi consectetur cum impedit aperiam possimus.
+            </p>
+          </div>
+          <div class="modal__footer">
+            <a class="close" src="#!">Disagree</a>
+            <a class="close" src="#!">Agree</a>
+          </div>
+        </div>
+      </div>
+
       <div class="content-img">
         <img id="boxed" class="boxed" src="images/carusel2.jpg" alt="" />
       </div>
@@ -89,6 +120,29 @@
           <div class="slider__item">
             <img src="images/carusel5.jpg" alt="" />
           </div>
+        </div>
+      </div>
+
+      <div id="pushpin" class="pushpin">
+        <div class="pushpin__container pushpin__container--pink">
+          <div class="pushpin__navbar">
+            <p>PINK</p>
+          </div>
+          <div class="pushpin__content"></div>
+        </div>
+
+        <div class="pushpin__container pushpin__container--blue">
+          <div class="pushpin__navbar">
+            <p>BLUE</p>
+          </div>
+          <div class="pushpin__content"></div>
+        </div>
+
+        <div class="pushpin__container pushpin__container--teal">
+          <div class="pushpin__navbar">
+            <p>TEAL</p>
+          </div>
+          <div class="pushpin__content"></div>
         </div>
       </div>
     </div>
