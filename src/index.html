@@ -8,6 +8,12 @@
   </head>
   <body>
     <div class="wrapper">
+      <button class="tooltip">Show tooltip</button>
+
+      <button id="toastBtn" class="toast__btn wave" data-target="toast">
+        Toast!
+      </button>
+
       <div id="tabs" class="tabs">
         <ul class="tabs__nav">
           <li>tab 1</li>
@@ -81,7 +87,7 @@
         </div>
       </div>
 
-      <button id="sidenavBtn" class="sidenav__btn" data-target="sidenav">
+      <button id="sidenavBtn" class="sidenav__btn wave" data-target="sidenav">
         Sidenav
       </button>
 
@@ -105,7 +111,7 @@
         </div>
       </div>
 
-      <ul id="scrollSpy" class="content-table">
+      <!-- <ul id="scrollSpy" class="content-table">
         <li><a href="#sidenavBtn">sidenav</a></li>
         <li><a href="#modalBtn">Modal</a></li>
         <li><a href="#boxed">Image</a></li>
@@ -114,9 +120,9 @@
         <li><a href="#collapsible">Collapsible</a></li>
         <li><a href="#slider">Slider</a></li>
         <li><a href="#pushpin">Pushpin</a></li>
-      </ul>
+      </ul> -->
 
-      <button id="modalBtn" class="modal__btn" data-target="modal">
+      <button id="modalBtn" class="modal__btn wave" data-target="modal">
         Modal
       </button>
 
@@ -142,7 +148,7 @@
       </div>
 
       <div id="tap" class="tap">
-        <button class="tap__btn">Tap Target</button>
+        <button class="tap__btn wave">Tap Target</button>
 
         <div class="tap__target">T</div>
 
@@ -156,7 +162,7 @@
       </div>
 
       <div id="dropdown" class="dropdown">
-        <button class="dropdown__btn">Drop Me!</button>
+        <button class="dropdown__btn wave">Drop Me!</button>
 
         <ul class="dropdown__content">
           <li>one</li>
@@ -226,7 +232,28 @@
           <div class="pushpin__navbar">
             <p>PINK</p>
           </div>
-          <div class="pushpin__content"></div>
+          <div class="pushpin__content">
+            <div class="paralax">
+              <img src="./images/paralax1.jpg" alt="" />
+            </div>
+            <p>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dicta
+              possimus fugiat deserunt recusandae maxime consectetur eum
+              mollitia assumenda harum vero illum quidem iusto, provident
+              tenetur eligendi ea minima sequi delectus aliquam facere nesciunt
+              rem. Sapiente quaerat labore, modi harum libero delectus soluta
+              magnam natus itaque perspiciatis a! Ipsa natus nesciunt ipsum quae
+              veritatis nobis, aliquam impedit voluptatem tempora officiis in,
+              dolores distinctio cumque ab magni optio delectus minima id
+              similique vero? Minus quasi porro laboriosam omnis rerum facilis
+              corporis distinctio, corrupti, sint, quis delectus! Minus
+              accusantium consectetur, officiis quo voluptatem sint. Illum,
+              earum nam sequi iure incidunt hic omnis voluptates.
+            </p>
+            <div class="paralax">
+              <img src="./images/paralax2.jpg" alt="" />
+            </div>
+          </div>
         </div>
 
         <div class="pushpin__container pushpin__container--blue">

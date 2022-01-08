@@ -28,6 +28,11 @@ export class Slider {
     if (this.options.indicators) this.showIndicators()
     this.changeSlide()
     this.root.addEventListener('click', this.click.bind(this))
+    if (!!window.navigator.maxTouchPoints) {
+      this.root.addEventListener('touchstart', this.touchstart.bind(this))
+      this.root.addEventListener('touchmove', this.touchmove.bind(this))
+      this.root.addEventListener('touchend', this.touchend.bind(this))
+    }
   }
 
   static showArrows() {
@@ -57,6 +62,27 @@ export class Slider {
       this.activeElement = +data.indicator
       this.changeSlide()
     }
+  }
+
+  static touchstart(e) {
+    this.x = e.touches[0].clientX
+    this.y = e.touches[0].clientY
+  }
+
+  static touchmove(e) {
+    this.xEnd = e.touches[0].clientX
+    this.yEnd = e.touches[0].clientY
+  }
+
+  static touchend() {
+    if (Math.abs(this.xEnd - this.x) > Math.abs(this.yEnd - this.y)) {
+      if (this.xEnd - this.x > 0) this.previous()
+      else this.next()
+    }
+    delete this.x
+    delete this.y
+    delete this.xEnd
+    delete this.yEnd
   }
 
   static next() {

@@ -117,9 +117,6 @@ body {
     width: 25px;
     height: 3px;
     border-radius: 2px;
-    // width: 10px;
-    // height: 10px;
-    // border-radius: 50%;
     margin: 0 3px;
     background: rgba(255, 255, 255, 0.4);
     transition: all ease-in-out 0.22s;
@@ -128,6 +125,17 @@ body {
     &.active {
       background: rgba(255, 255, 255, 0.95);
       animation: indicatorClick 0.3s ease-in;
+    }
+  }
+}
+
+@media (max-width: 425px) {
+  .slider {
+    &__arrow {
+      display: none;
+    }
+    &__content {
+      height: auto;
     }
   }
 }
@@ -147,7 +155,8 @@ body {
   background: #f5f5f5;
   color: #212121;
   box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.2);
-  width: 500px;
+  max-width: 500px;
+  width: 100%;
 
   &__header {
     border-bottom: 1px solid #bdbdbd;
@@ -259,6 +268,7 @@ body {
     border-radius: 37% 63% 0% 100% / 64% 52% 48% 36%;
     overflow: hidden;
     width: 500px;
+    max-width: 98vw;
     padding: 50px 100px 70px 50px;
     z-index: 8;
     transform-origin: right bottom;
@@ -325,6 +335,11 @@ body {
     z-index: 10;
   }
 }
+@media (max-width: 425px) {
+  .boxed {
+    height: auto;
+  }
+}
 
 .modal {
   position: fixed;
@@ -341,8 +356,9 @@ body {
   transition: background 0.22s ease;
 
   &__container {
-    width: 40vw;
+    width: 90vw;
     height: auto;
+    max-height: 90vh;
     z-index: 2;
     background: #f5f5f5;
     padding: 20px;
@@ -429,6 +445,7 @@ body {
     top: 0;
     padding: 0 10%;
     box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
+    z-index: 2;
 
     p {
       padding: 15px;
@@ -436,7 +453,10 @@ body {
   }
 
   &__content {
-    height: 400px;
+    p {
+      padding: 20px;
+      font-weight: 300;
+    }
   }
 }
 
@@ -512,7 +532,7 @@ body {
   }
 
   &__container {
-    width: 30vw;
+    width: 90vw;
     height: 100vh;
     background: #f5f5f5;
     color: #212121;
@@ -580,5 +600,111 @@ body {
       font-size: 20px;
       margin-bottom: 15px;
     }
+  }
+}
+
+.toast {
+  position: fixed;
+  right: 50px;
+  top: 50px;
+  z-index: 10;
+
+  &__btn {
+    @extend .dropdown__btn;
+    display: block;
+    margin: 50px auto;
+  }
+
+  &__content {
+    background: #e0e0e0;
+    color: #212121;
+    border-radius: 30px;
+    padding: 5px 20px;
+    margin-bottom: 10px;
+    transform: translateX(100%);
+    opacity: 0;
+    transition: all 0.22s ease;
+
+    &.active {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+}
+
+@media (max-width: 425px) {
+  .toast {
+    right: 20px;
+    top: 50px;
+  }
+}
+
+.tooltip {
+  @extend .toast__btn;
+  position: relative;
+
+  &::before {
+    content: 'I am tooltip!';
+    background: #e0e0e0;
+    color: #212121;
+    padding: 5px 10px;
+    position: absolute;
+    left: 0;
+    top: 80%;
+    opacity: 0;
+    z-index: -1;
+    transition: all 0.22s ease;
+  }
+  &:hover::before {
+    top: 110%;
+    opacity: 1;
+  }
+}
+
+.wave {
+  position: relative;
+  overflow: hidden;
+}
+.effect {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  animation: waves 0.4s ease-out;
+}
+
+@keyframes waves {
+  0% {
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 1;
+  }
+  80% {
+    transform: translate(-50%, -50%) scale(0.8);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0;
+  }
+}
+
+.paralax {
+  position: relative;
+  height: 300px;
+  width: 100%;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+}
+
+@media (max-width: 425px) {
+  .paralax {
+    height: 150px;
   }
 }

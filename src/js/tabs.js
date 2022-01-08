@@ -8,6 +8,7 @@ export class Tabs {
     this.tabs = this.root.querySelectorAll('.tabs__nav>li')
 
     this.tabsNav.addEventListener('click', this.click.bind(this))
+    this.click({ target: this.tabs[0] })
   }
 
   static click(e) {
