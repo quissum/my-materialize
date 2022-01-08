@@ -70,6 +70,7 @@ export class Slider {
   }
 
   static touchmove(e) {
+    e.preventDefault()
     this.xEnd = e.touches[0].clientX
     this.yEnd = e.touches[0].clientY
   }
